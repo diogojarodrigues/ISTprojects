@@ -1,0 +1,6 @@
+{
+	"java.project.sourcePaths": [
+		"project/prr-app/src/prr/app",
+		"project/prr-core"
+	]
+}
