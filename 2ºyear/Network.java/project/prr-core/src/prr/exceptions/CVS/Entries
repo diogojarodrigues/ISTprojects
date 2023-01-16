@@ -1,0 +1,24 @@
+/CannotBefriendSelfException.java/1.1/Fri Oct 28 14:54:26 2022//
+/ClientNotFoundException.java/1.1/Mon Oct 17 22:47:45 2022//
+/ClientNotificationsAlreadyDisabledException.java/1.1/Tue Nov  1 11:29:05 2022//
+/ClientNotificationsAlreadyEnabledException.java/1.1/Tue Nov  1 11:29:05 2022//
+/DestinationIsBusyException.java/1.1/Sat Oct 29 12:42:17 2022//
+/DestinationIsOffException.java/1.1/Sat Oct 29 12:42:17 2022//
+/DestinationIsSilentException.java/1.1/Sat Oct 29 12:42:17 2022//
+/DuplicateClientIdException.java/1.1/Tue Oct 18 10:27:12 2022//
+/DuplicateTerminalIdException.java/1.1/Mon Oct 17 21:06:45 2022//
+/FriendAlreadyAddedException.java/1.1/Fri Oct 28 14:54:27 2022//
+/FriendNotFoundException.java/1.1/Fri Oct 28 14:54:27 2022//
+/ImportFileException.java/1.1/Wed Sep 14 16:51:38 2022//
+/InvalidCommunicationException.java/1.1/Tue Nov  1 19:20:27 2022//
+/InvalidTerminalIdException.java/1.1/Mon Oct 17 21:06:45 2022//
+/MissingFileAssociationException.java/1.1/Wed Sep 14 16:51:38 2022//
+/NoOngoingCommunicationException.java/1.1/Tue Nov  1 11:29:05 2022//
+/SameTerminalStateException.java/1.1/Fri Oct 28 14:54:27 2022//
+/TerminalIsBusyException.java/1.1/Tue Nov  1 11:29:05 2022//
+/TerminalNotFoundException.java/1.1/Tue Oct 18 13:16:45 2022//
+/UnavailableFileException.java/1.2/Sat Oct  1 17:34:11 2022//
+/UnrecognizedEntryException.java/1.2/Wed Sep 14 17:39:54 2022//
+/UnsupportedAtDestinationException.java/1.1/Sat Oct 29 16:41:45 2022//
+/UnsupportedAtOriginException.java/1.1/Sat Oct 29 16:41:45 2022//
+D
