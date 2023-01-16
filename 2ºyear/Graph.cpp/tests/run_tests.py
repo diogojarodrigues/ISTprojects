@@ -1,0 +1,6 @@
+for i in range(1, 11, 1):
+	print(f"./run < tests/tests_script/dense_graph_{i}.in")
+	print(f"./run < tests/tests_script/delaunay_graph_{i}.in")
+
+
+##hyperfine --warmup 100 --min-runs 500 './run < tests/tests_script/dense_graph_1.in' './run < tests/tests_script/delaunay_graph_1.in' './run < tests/tests_script/dense_graph_2.in' './run < tests/tests_script/delaunay_graph_2.in' './run < tests/tests_script/dense_graph_3.in' './run < tests/tests_script/delaunay_graph_3.in' './run < tests/tests_script/dense_graph_4.in' './run < tests/tests_script/delaunay_graph_4.in' './run < tests/tests_script/dense_graph_5.in' './run < tests/tests_script/delaunay_graph_5.in' './run < tests/tests_script/dense_graph_6.in' './run < tests/tests_script/delaunay_graph_6.in' './run < tests/tests_script/dense_graph_7.in' './run < tests/tests_script/delaunay_graph_7.in' './run < tests/tests_script/dense_graph_8.in' './run < tests/tests_script/delaunay_graph_8.in' './run < tests/tests_script/dense_graph_9.in' './run < tests/tests_script/delaunay_graph_9.in' './run < tests/tests_script/dense_graph_10.in' './run < tests/tests_script/delaunay_graph_10.in'
