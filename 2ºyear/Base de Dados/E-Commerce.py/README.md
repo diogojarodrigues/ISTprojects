@@ -4,13 +4,15 @@ You need to have docker installed on your machine. You can find instructions on 
 
 ### Before we run our App we need to setup our enviroment.
 
+
 #### 1. Run the following command to build the docker image.
 
 ```bash
 $ docker compose up --build
 ```  
 
-##### 2. Find the section of the logs towards the bottom of the Terminal window that look like this excerpt:
+
+#### 2. Find the section of the logs towards the bottom of the Terminal window that look like this excerpt:
 
 ```log
 db-workspace-notebook-1  |     Or copy and paste one of these URLs:
