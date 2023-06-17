@@ -2,13 +2,16 @@
 
 You need to have docker installed on your machine. You can find instructions on how to install docker [here](https://docs.docker.com/get-docker/).
 
-Before we run our App we need to setup our enviroment.
+
+###Before we run our App we need to setup our enviroment.
+
 
 1. Run the following command to build the docker image.
 
 ```bash
 $ docker compose up --build
 ```
+
 
 2. Find the section of the logs towards the bottom of the Terminal window that look like this excerpt:
 
@@ -20,9 +23,8 @@ db-workspace-notebook-1  |         http://127.0.0.1:8888/lab?token=f83ee982668eb
 
 And click on the second link to open the Jupyter Notebook.
 
+
 3. Open a terminal on the notebook and run the following command to create the database and the user.
-
-
 
 ```bash
 $ psql -h postgres -U postgres
@@ -40,10 +42,12 @@ GRANT ALL ON DATABASE db TO db;
 \q
 ```
 
+
 4. Rerun the following command to restart the docker image and open the app on the "localhost:5001".
 
 ```bash
 $ docker compose up --build
 ```
 
-# You have all set up! Enjoy!
+
+### You have all set up! Enjoy!
