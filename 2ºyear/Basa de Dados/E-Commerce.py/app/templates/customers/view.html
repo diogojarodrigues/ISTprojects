@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+
+{% block customers_active %}active fade{% endblock %}
+
+{% block header %}
+<h1>{% block title %}{{ customer['name'] }} | View{% endblock %}</h1>
+{% endblock %}
+
+{% block navigation %}
+<a class="navigation-btn" href="{{ url_for('customers_index') }}">
+    <i class="bi bi-chevron-left"></i>
+</a>
+{% endblock %}
+
+{% block content %}
+<form method="post">
+    <label for="cust_no">Customer number</label>
+    <input
+        name="cust_no"
+        id="cust_no"
+        type="number"
+        value="{{ customer['cust_no'] }}"
+        disabled
+    >
+    <label for="email">E-mail</label>
+    <input
+        name="email"
+        id="email"
+        type="email"
+        value="{{ customer['email'] }}"
+        disabled
+    >
+    <label for="phone">Phone number</label>
+    <input
+        name="phone"
+        id="phone"
+        type="number"
+        value="{{ customer['phone'] }}"
+        disabled
+    >
+    <label for="address">Address</label>
+    <input
+        name="address"
+        id="address"
+        type="text"
+        value="{{ customer['address'] }}"
+        disabled
+    >
+</form>
+<div class="customer-orders-header">
+    <h1 class="customer-orders-label">Orders</h1>
+    <a class="btn icon-btn" id="orders-add-btn" href="{{ url_for('order_create', cust_no=customer['cust_no']) }}">
+        <i class="bi bi-plus-lg plus-icon"></i>
+        New
+    </a>
+    <div class="navigation">
+        {% if page > 0 %}
+        <a class="navigation-btn prev btn icon-btn" href="{{ url_for('customer_view', cust_no=customer['cust_no'], page=page-1) }}">
+            <i class="bi bi-chevron-left"></i>
+            Prev
+        </a>
+        {% endif %}
+        {% if not last %}
+        <a class="navigation-btn next btn icon-btn" href="{{ url_for('customer_view', cust_no=customer['cust_no'], page=page+1) }}">
+            Next
+            <i class="bi bi-chevron-right"></i>
+        </a>
+        {% endif %}
+    </div>
+</div>
+<hr>
+{% for order in orders %}
+<article class="post">
+    <header>
+        <div>
+            <h1>Order {{ order['order_no'] }}</h1>
+        </div>
+        {% if not order['paid_by'] %}
+        <form class="pay-form" action="{{ url_for('order_pay', cust_no=customer['cust_no'], order_no=order['order_no']) }}" method="post">
+            <button class="btn icon-btn" id="paid" onclick="return confirm('Customer {{ order['cust_no'] }}, pay order {{ order['order_no'] }}?')">
+                <i class="bi bi-wallet2"></i>
+                Pay
+            </button>
+        </form>
+        {% endif %}
+        <a class="btn icon-btn view-btn" href="{{ url_for('order_view', cust_no=order['cust_no'], order_no=order['order_no']) }}">
+            <i class="bi bi-eye"></i>
+            View
+        </a>
+    </header>
+    <div class="info">
+        <p class="body">
+            <b>Order date:</b>
+            {{ order['date'] }}
+        </p>
+        <p class="body">
+            <b>Total:</b>
+            {{ order['total'] }}€ ({{ order['product_qty'] }} {{ 'items' if order['product_qty'] > 1 else 'item' }})
+        </p>
+        <p class="body">
+            <b>Paid:</b>
+            {{ "Yes" if order['paid_by'] else "No"}}
+        </p>
+    </div>
+</article>
+{% if not loop.last %}
+<hr>
+{% endif %}
+{% endfor %}
+{% endblock %}

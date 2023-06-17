@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block navigation %}
+{% if page > 0 %}
+<a class="navigation-btn prev btn icon-btn" href="{% block prev_url %}{% endblock %}">
+    <i class="bi bi-chevron-left"></i>
+    Prev
+</a>
+{% endif %}
+{% if not last %}
+<a class="navigation-btn next btn icon-btn" href="{% block next_url %}{% endblock %}">
+    Next
+    <i class="bi bi-chevron-right"></i>
+</a>
+{% endif %}
+{% endblock %}

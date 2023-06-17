@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+
+{% block customers_active %}active fade{% endblock %}
+
+{% block header %}
+<h1>{% block title %}Order {{ order['order_no'] }} | View{% endblock %}</h1>
+{% endblock %}
+
+{% block navigation %}
+<a class="navigation-btn" href="{{ url_for('customer_view', cust_no=order['cust_no']) }}">
+    <i class="bi bi-chevron-left"></i>
+</a>
+{% endblock %}
+
+{% block content %}
+<form action="{{ url_for('order_pay', cust_no=order['cust_no'], order_no=order['order_no']) }}" method="post">
+    <label for="order_no">Order number</label>
+    <input
+        name="order_no"
+        id="order_no"
+        type="text"
+        value="{{ order['order_no'] }}"
+        disabled
+    >
+    <label for="cust_no">Customer number</label>
+    <input
+        name="cust_no"
+        id="cust_no"
+        type="text"
+        value="{{ order['cust_no'] }}"
+        disabled
+    >
+    <label for="date">Date</label>
+    <input
+        name="date"
+        id="date"
+        type="date"
+        value="{{ order['date'] }}"
+        disabled
+    >
+    <label class="total-lbl">
+        <b>Total:</b>
+        {{ order['total'] }}€ ({{ order['product_qty'] }} {{ 'items' if order['product_qty'] > 1 else 'item' }})
+    </label>
+    <div class="paid-container">
+        <label for="paid">
+            <b>Paid</b>
+            : {{ "Yes" if order['paid_by'] else "No"}}
+        </label>
+        {% if not order['paid_by'] %}
+        <button class="btn icon-btn" id="paid" onclick="return confirm('Customer {{ order['cust_no'] }}, pay order {{ order['order_no'] }}?')">
+            <i class="bi bi-wallet2"></i>
+            Pay
+        </button>
+        {% endif %}
+    </div>
+    <div class="order-products-header">
+        <h1 class="order-products-label">Products</h1>
+        <div class="navigation">
+            {% if page > 0 %}
+            <a class="navigation-btn prev btn icon-btn" href="{{ url_for('order_view', cust_no=order['cust_no'], order_no=order['order_no'], page=page-1) }}">
+                <i class="bi bi-chevron-left"></i>
+                Prev
+            </a>
+            {% endif %}
+            {% if not last %}
+            <a class="navigation-btn next btn icon-btn" href="{{ url_for('order_view', cust_no=order['cust_no'], order_no=order['order_no'], page=page+1) }}">
+                Next
+                <i class="bi bi-chevron-right"></i>
+            </a>
+            {% endif %}
+        </div>
+    </div>
+    <hr>
+    <div class="products-container">
+        <label id="sku-lbl">SKU:</label>
+        <label id="qty-lbl">Qty:</label>
+        {% for product in products %}
+        <div class="product-container">
+            <input
+                type="text"
+                class="product-sku"
+                value="{{ product['sku'] }}"
+                disabled
+            >
+            <input
+                type="text"
+                class="product-qty"
+                value="{{ product['qty'] }}"
+                disabled
+            >
+        </div>
+        {% endfor %}
+    </div>
+</form>
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block products_active %}active{% endblock %}
+
+{% block header %}
+<h1>{% block title %}Create Product{% endblock %}</h1>
+{% endblock %}
+
+{% block navigation %}
+<a class="navigation-btn" href="{{ url_for('products_index') }}">
+    <i class="bi bi-chevron-left"></i>
+</a>
+{% endblock %}
+
+{% block content %}
+<form method="post">
+    <label for="sku">SKU</label>
+    <input
+        name="sku"
+        id="sku"
+        type="text"
+        value="{{ request.form['sku'] }}"
+        required
+    >
+    <label for="name">Name</label>
+    <input
+        name="name"
+        id="name"
+        type="text"
+        value="{{ request.form['name'] }}"
+        required
+    >
+    <label for="description">Description</label>
+    <input
+        name="description"
+        id="description"
+        type="text"
+        value="{{ request.form['description'] }}"
+    >
+    <label for="price">Price</label>
+    <input
+        name="price"
+        id="price"
+        type="number"
+        min="0"
+        step="0.01"
+        value="{{ request.form['price'] }}"
+        required
+    >
+    <label for="ean">EAN</label>
+    <input
+        name="ean"
+        id="ean"
+        type="number"
+        min="0"
+        value="{{ request.form['ean'] }}"
+    >
+    <hr>
+    <input class="btn create" type="submit" value="Create">
+</form>
+{% endblock %}

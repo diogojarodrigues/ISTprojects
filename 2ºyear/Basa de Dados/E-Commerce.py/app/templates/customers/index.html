@@ -1,0 +1,56 @@
+{% extends 'index_base.html' %}
+
+{% block customers_active %}active fade{% endblock %}
+
+{% block header %}
+<h1>{% block title %}Customers{% endblock %}</h1>
+<a class="btn icon-btn" href="{{ url_for('customer_create') }}">
+    <i class="bi bi-plus-lg plus-icon"></i>
+    New
+</a>
+{% endblock %}
+
+{% block content %}
+{% for customer in customers %}
+<article class="post">
+    <header>
+        <div>
+            <h1>{{ customer['name'] }}</h1>
+            <div class="about">
+                Customer number: {{ customer['cust_no'] }}
+            </div>
+        </div>
+        <a class="btn icon-btn view-btn" href="{{ url_for('customer_view', cust_no=customer['cust_no']) }}">
+            <i class="bi bi-eye"></i>
+            View
+        </a>
+        <form class="delete-form" action="{{ url_for('customer_delete', cust_no=customer['cust_no']) }}" method="post">
+            <button class="btn icon-btn" onclick="return confirm('Are you sure you want to delete customer {{ customer['cust_no'] }} and all of his orders?')">
+                <i class="bi bi-trash3"></i>
+                Delete
+            </button>
+        </form>
+    </header>
+    <div class="info">
+        <p class="body">
+            <b>Address:</b>
+            {{ customer['address'] if customer['address'] else 'NA'}}
+        </p>
+        <p class="body">
+            <b>E-mail:</b>
+            {{ customer['email'] }}
+        </p>
+        <p class="body">
+            <b>Phone number:</b>
+            {{ customer['phone'] if customer['phone'] != None else 'NA' }}
+        </p>
+    </div>
+</article>
+{% if not loop.last %}
+<hr>
+{% endif %}
+{% endfor %}
+{% endblock %}
+
+{% block prev_url %}{{ url_for('customers_index', page=page - 1) }}{% endblock %}
+{% block next_url %}{{ url_for('customers_index', page=page + 1) }}{% endblock %}

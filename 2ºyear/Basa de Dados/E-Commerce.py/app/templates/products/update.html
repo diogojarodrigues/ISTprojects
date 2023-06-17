@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block products_active %}active{% endblock %}
+
+{% block header %}
+<h1>{% block title %}{{ product['name'] }} | Edit{% endblock %}</h1>
+{% endblock %}
+
+{% block navigation %}
+<a class="navigation-btn" href="{{ url_for('products_index') }}">
+    <i class="bi bi-chevron-left"></i>
+</a>
+{% endblock %}
+
+{% block content %}
+<form method="post">
+    <label for="sku">SKU</label>
+    <input
+        name="sku"
+        id="sku"
+        type="text"
+        value="{{ product['sku'] }}"
+        disabled
+    >
+    <label for="ean">EAN</label>
+    <input
+        name="ean"
+        id="ean"
+        type="number"
+        value="{{ product['ean'] }}"
+        disabled
+    >
+    <label for="price">Price</label>
+    <input
+        name="price"
+        id="price"
+        type="number"
+        min="0"
+        step="0.01"
+        value="{{ request.form['price'] or product['price'] }}"
+    >
+    <label for="description">Description</label>
+    <input
+        name="description"
+        id="description"
+        type="text"
+        value="{{ request.form['description'] or product['description'] }}"
+    >
+    <input class="btn save" type="submit" value="Save">
+</form>
+<hr>
+<form action="{{ url_for('product_delete', sku=product['sku']) }}" method="post">
+    <input
+        class="btn delete"
+        type="submit"
+        value="Delete"
+        onclick="return confirm('Are you sure you want to delete the product {{ product['sku'] }} and remove it from all orders? Note that it will stop being supplied.');"
+    >
+</form>
+{% endblock %}

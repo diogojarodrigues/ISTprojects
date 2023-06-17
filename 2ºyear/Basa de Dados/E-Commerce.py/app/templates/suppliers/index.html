@@ -1,0 +1,50 @@
+{% extends 'index_base.html' %}
+
+{% block suppliers_active %}active fade{% endblock %}
+
+{% block header %}
+<h1>{% block title %}Suppliers{% endblock %}</h1>
+<a class="btn icon-btn" href="{{ url_for('supplier_create') }}">
+    <i class="bi bi-plus-lg plus-icon"></i>
+    New
+</a>
+{% endblock %}
+
+{% block content %}
+{% for supplier in suppliers %}
+<article class="post">
+    <header>
+        <div>
+            <h1>{{ supplier['name'] if supplier['name'] else "NO NAME" }}</h1>
+            <div class="about">TIN: {{ supplier['tin'] }}</div>
+        </div>
+        <form class="delete-form" action="{{ url_for('supplier_delete', tin=supplier['tin']) }}" method="post">
+            <button class="btn icon-btn" onclick="return confirm('Are you sure you want to delete supplier {{ supplier['tin'] }}? The products supplied by them will still be available according to current stock.')">
+                <i class="bi bi-trash3"></i>
+                Delete
+            </button>
+        </form>
+    </header>
+    <div class="info">
+        <p class="body">
+            <b>Address:</b>
+            {{ supplier['address'] if supplier['address'] != None else 'NO ADDRESS' }}
+        </p>
+        <p class="body">
+            <b>Product supplied:</b>
+            {{ supplier['sku'] if supplier['sku'] != None else 'NA' }}
+        </p>
+        <p class="body">
+            <b>Expire date:</b>
+            {{ supplier['date'] if supplier['date'] else "NO DATE"}}
+        </p>
+    </div>
+</article>
+{% if not loop.last %}
+<hr>
+{% endif %}
+{% endfor %}
+{% endblock %}
+
+{% block prev_url %}{{ url_for('suppliers_index', page=page - 1) }}{% endblock %}
+{% block next_url %}{{ url_for('suppliers_index', page=page + 1) }}{% endblock %}

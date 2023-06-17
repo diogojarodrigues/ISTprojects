@@ -1,0 +1,49 @@
+---
+title:  |
+        | \vspace{-3cm} Pergunta 1
+geometry: margin=2cm
+fig_width: 3 
+fig_height: 3 
+output:
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+knitr::opts_chunk$set(fig.width=7, fig.height=3.5) 
+```
+
+```{r}
+pacman::p_load(readxl, ggplot2, magrittr, ggthemes)
+
+FILE_NAME <- "econ.xlsx"
+INICIAL_YEAR <- "01-01-1971"
+FIRST_COLUMN <- "ddesemp"
+SECOND_COLUMN <- "gcp"
+GRAPH_LABEL <- c("Duração Mediana de Desemprego", "Gastos de Consumo Pessoal") 
+GRAPH_TITLE <- "Desempregabilidade nos USA"
+
+data_processing <- function(col) {
+  data_col <- data_year[[col]]
+  data_col_avg <- mean(data_col)
+  data_col_sd <- sd(data_col)
+  new_col <- (data_col - data_col_avg)/data_col_sd
+  return(new_col)
+}
+
+data <- read_excel(FILE_NAME)
+data_year <- subset(data, as.Date(tempo, "%d-%m-%Y") >= as.Date(INICIAL_YEAR, "%d-%m-%Y"))
+
+ggplot(data_year, aes(x=tempo)) + 
+  geom_line(aes(y = data_processing(FIRST_COLUMN), colour="one"), linewidth=0.8)  +
+  geom_line(aes(y = data_processing(SECOND_COLUMN),  colour="two"), linewidth=0.8) +
+  scale_color_manual(
+    name = "Legenda", 
+    labels = GRAPH_LABEL,
+    values = c("#da4747", "#27b5ee")
+  ) +
+  labs(x = "Anos", y = "", title = GRAPH_TITLE) +
+  theme_fivethirtyeight() +
+  theme(axis.title.x = element_text(), axis.title.y = element_text())
+
+```

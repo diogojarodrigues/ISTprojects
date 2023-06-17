@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+
+{% block customers_active %}active{% endblock %}
+
+{% block header %}
+<h1>{% block title %}Place order{% endblock %}</h1>
+{% endblock %}
+
+{% block navigation %}
+<a class="navigation-btn" href="{{ url_for('customer_view', cust_no=cust_no) }}">
+    <i class="bi bi-chevron-left"></i>
+</a>
+{% endblock %}
+
+{% block content %}
+<form id="myForm" method="post">
+    <label for="order_no">Order number</label>
+    <input
+        name="order_no"
+        id="order_no"
+        type="number"
+        min="0"
+        value="{{ order_no }}"
+        disabled
+    >
+    <label for="cust_no">Customer number</label>
+    <input
+        name="cust_no"
+        id="cust_no"
+        type="number"
+        min="0"
+        value="{{ cust_no }}"
+        disabled
+    >
+    <label for="date">Date</label>
+    <input
+        name="date"
+        id="date"
+        type="date"
+        required
+    >
+    <div class="order-products-header">
+        <h1 class="order-products-label">Products</h1>
+    </div>
+    <hr>
+    <div class="products-container">
+        <label id="sku-lbl">SKU:</label>
+        <label id="qty-lbl">Qty:</label>
+    </div>
+    <div class="btn icon-btn" id="add-product-btn" onclick="add_product()">
+        <i class="bi bi-plus-lg plus-icon"></i>
+        Add product
+    </div>
+    <hr>
+    <input class="btn create" type="submit" value="Create">
+</form>
+<script>
+    const products = document.querySelector(".products-container");
+
+    function add_product(first = false) {
+        const new_product = document.createElement("div");
+        new_product.className = "product-container";
+
+        const product_sku = document.createElement("input");
+        product_sku.className = "product-sku";
+        product_sku.type = "text";
+        product_sku.required = true;
+
+        const product_qty = document.createElement("input");
+        product_qty.className = "product-qty";
+        product_qty.type = "number";
+        product_qty.placeholder = "1";
+        product_qty.value = 1;
+        product_qty.required = true;
+        product_qty.min = 1;
+
+        new_product.appendChild(product_sku);
+        new_product.appendChild(product_qty);
+
+        if (!first) {
+            const delete_btn = document.createElement("i");
+            delete_btn.className = "bi bi-trash3-fill trash-btn";
+            delete_btn.onclick = (e) => products.removeChild(new_product);
+            new_product.appendChild(delete_btn);
+        }
+
+        products.appendChild(new_product);
+    }
+
+    function submit_form(event) {
+        const myForm = document.querySelector("#myForm");
+
+        if (!myForm.reportValidity()) return;
+
+        const formData = event.formData;
+
+        // fetch all products and stringify them
+        let products_array = [];
+        for (const element of Array.from(products.children).slice(2)) {
+            const product_sku = element.firstChild;
+            const product_qty = element.children[1]
+
+            products_array.push({
+                sku: product_sku.value,
+                qty: product_qty.value
+            });
+        }
+
+        formData.set("products", JSON.stringify(products_array));
+
+        myForm.submit()
+    }
+
+    window.addEventListener("load", () => add_product(first = true));
+    window.addEventListener("formdata", submit_form)
+</script>
+{% endblock %}
