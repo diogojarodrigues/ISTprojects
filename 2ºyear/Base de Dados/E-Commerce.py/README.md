@@ -35,6 +35,7 @@ Use the password "postgres" when prompted.
 CREATE USER db WITH PASSWORD 'db';
 CREATE DATABASE db WITH OWNER = db ENCODING = 'UTF8';
 GRANT ALL ON DATABASE db TO db;
+\c db
 \i work/delivery-3/schema.sql
 \i work/delivery-3/populate.sql
 \i work/delivery-3/ICs.sql
