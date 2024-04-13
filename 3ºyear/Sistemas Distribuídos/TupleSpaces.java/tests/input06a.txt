@@ -1,0 +1,7 @@
+put <a>
+put <b>
+put <c>
+setdelay A 4
+setdelay B 4
+take <a>
+exit

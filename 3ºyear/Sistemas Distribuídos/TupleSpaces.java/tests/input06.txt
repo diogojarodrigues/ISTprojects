@@ -1,0 +1,18 @@
+TESTE
+-> lançar cliente 1
+-> lançar cliente 2
+ Cliente 1 
+put <a>
+put <b>
+put <c>
+getTupleSpacesState A // devolve [<a>, <b>, <c>]
+setdelay A 4
+setdelay B 4
+take <a>
+ Cliente 2, imediatamente a seguir a take <a> 
+take <a>
+
+Outcome esperado:
+Cliente 2 consegue o take porque consegue adquirir a maioria (por causa do setdelay 7); ao fim de 7s, cliente 1 liberta os 
+locks e eventualmente cliente 2 consegue o take. Se o take não for de <a>, o cliente 1 também consegue fazer o take depois 
+pdo cliente 2 o fazer.
