@@ -1,0 +1,10 @@
+.idea
+.mvn
+.DS_Store
+
+scripts
+
+backend/src/main/resources/static/documents/declarations
+frontend/cypress.env.json
+data/access.log
+data/error.log
