@@ -1,0 +1,14 @@
+**/*.o
+**/*.output
+.auto/**
+
+til
+til_parser.tab.c
+til_parser.tab.h
+til_scanner.cpp
+test.til
+test.xml
+tests/*
+auto-tests/*
+test.asm
+**/*.sh
