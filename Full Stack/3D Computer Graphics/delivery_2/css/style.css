@@ -1,0 +1,28 @@
+body {
+    margin: 0px;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.hud {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1000; /* Ensure HUD appears on top */
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 5px;
+    padding: 0;
+}
+
+ul li{
+    margin-top: 5px;
+}
+
+.active {
+    color: red;
+}

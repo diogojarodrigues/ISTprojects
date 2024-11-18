@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="ťutf-8" ť>
+    <title>Grua</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="importmap">
+        {
+          "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@v0.163.0/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.163.0/examples/jsm/"
+          }
+        }
+    </script>
+</head>
+<body>
+    <div id="hud" class="hud">
+      <h3>Key Mapping</h3>
+      <ul>
+        <li id="KeyQ" class="KeyQ">Q - Rotate Left</li>
+        <li id="KeyA" class="KeyA">A - Rotate Right</li>
+        <li id="KeyW" class="KeyW">W - Move forward</li>
+        <li id="KeyS" class="KeyS">S - Move back</li>
+        <li id="KeyE" class="KeyE">E - Lower Hook</li>
+        <li id="KeyD" class="KeyD">D - Raise Hook</li>
+        <li id="KeyR" class="KeyR">R - Open Hook</li>
+        <li id="KeyF" class="KeyF">F - Close Hook</li>
+        <li id="Digit1" class="Digit1">1 - Camera 1</li>
+        <li id="Digit2" class="Digit2">2 - Camera 2</li>
+        <li id="Digit3" class="Digit3">3 - Camera 3</li>
+        <li id="Digit4" class="Digit4">4 - Camera 4</li>
+        <li id="Digit5" class="Digit5">5 - Camera 5</li>
+        <li id="Digit6" class="Digit6">6 - Camera 6</li>
+        <li id="Digit7" class="Digit7">7 - Toggle Wireframes</li>
+      </ul> 
+  </div>
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
