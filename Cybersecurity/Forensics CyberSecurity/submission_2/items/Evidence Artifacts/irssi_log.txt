@@ -1,0 +1,63 @@
+--- Log opened Thu Sep 26 16:30:45 2024
+16:30 -!- johnnymusk [~johnnymus@freenode-995.pbo.e924c1.IP] has joined #thebasement
+16:30 -!- Irssi: #thebasement: Total of 3 nicks [1 ops, 0 halfops, 0 voices, 2 normal]
+16:30 -!- Irssi: Join to #thebasement was synced in 8 secs
+16:30 < RootKitty> Hey João, you're not gonna believe what I managed to pull off. Using a combination of the techniques we use in STT, I was able to exploit Fenix and steal pairs of usernames and passwords.
+16:31 < johnnymusk> Wait, seriously? How did you even do that? I’ve been poking around Fenix for ages and got nowhere!
+16:31 < RootKitty> Let’s just say experience comes in handy, and I got creative with a few of the methods we’ve been testing.
+16:31 < johnnymusk> You’re on another level! I can’t believe you pulled it off when I couldn’t even scratch the surface. What’s your secret?
+16:31 < RootKitty> Nice try, but I'm not giving away the whole playbook. I’ll send you the credentials, though, so you can see for yourself.
+16:32 < johnnymusk> You’re a legend. I have to see this! I never thought Fenix could be cracked like that.
+16:32 < RootKitty> Yeah, well, don’t get too hyped. This stays between us, no need to broadcast it.
+16:32 < johnnymusk> Don’t worry, I know the rules. I’m just eager to see if those creds really work. You’re seriously next-level.
+16:33 < RootKitty> Appreciate it, João. Just remember to keep it quiet. We don’t need extra eyes on this.
+16:33 < johnnymusk> Of course, you can trust me. I wouldn’t jeopardize anything. I’m just lucky I get to see how you do this stuff.
+16:33 < RootKitty> Good. I’ll send you the creds in a bit, and you can check it out for yourself.
+16:33 < johnnymusk> I can’t wait! Just, uh… make sure this doesn’t backfire on us, right? IST won’t take this lightly if the creds get out.
+16:34 < RootKitty> I know, João. I’ve got this under control. You’re not at the point where you need to worry about that kind of thing.
+16:34 < johnnymusk> Yeah, I trust you. You always know what you’re doing. Just send those creds when you’re ready, I’m dying to see what you cracked.
+16:35 < RootKitty> As promised, here they are https://we.tl/t-Yg5Wiq1nxf. 
+16:36 < RootKitty> You can use the script that we made together to hide the credentials! I had a feeling you would have a use for it soon! Catch you later, João!
+16:36 < johnnymusk> Thanks Kitty! You're always one step ahead.
+--- Log closed Thu Sep 26 16:36:18 2024
+--- Log opened Thu Sep 26 17:01:03 2024
+17:01 -!- johnnymusk [~johnnymus@freenode-995.pbo.e924c1.IP] has joined #thebasement
+17:01 -!- Irssi: #thebasement: Total of 3 nicks [1 ops, 0 halfops, 0 voices, 2 normal]
+17:01 -!- Irssi: Join to #thebasement was synced in 8 secs
+17:01 < johnnymusk> RootKitty, you're not gonna believe what just happened. I got this anonymous email telling me to retrieve a USB pen from a hidden spot near IST.
+17:01 < johnnymusk> I thought it was some kind of joke, but I went anyway.
+17:01 < RootKitty> Seriously?
+17:02 < RootKitty> And you actually found it?
+17:02 < johnnymusk> Yeah, I found it. When I plugged it into my computer, I discovered a folder with some seriously disturbing information.
+17:02 < johnnymusk> No encryption, just right there for anyone to see.
+17:02 < RootKitty> Okay, now you've got me intrigued. What was in the folder?
+17:03 < johnnymusk> It had a bunch of documents. Among them was the API documentation for a mind control component called MKUltra, showing various parameters used for mind control.
+17:03 < johnnymusk> There was also a blueprint of the Ariane 6 rocket, which specifically highlighted the position of the ISTSAT-1 satellite in its payload.
+17:03 < johnnymusk> But that's not all. I found a bank statement belonging to someone named Virgolino Gonçalves, showing that he received a massive transfer from a company called ERCE.LTA. He then used that money to make a payment to MOBICARE to purchase a component called MKU-2784.
+17:04 < RootKitty> Wait, MKU-2784?
+17:04 < RootKitty> That sounds like it could be part of the mind control tech.
+17:04 < RootKitty> What else was in the folder?
+17:04 < johnnymusk> Exactly what I was thinking. There were also logs showing that this mind control component has been actively used.
+17:04 < johnnymusk> The logs indicate it’s been influencing people to visit four specific restaurants in the Oeiras area. And, if that wasn't strange enough, there was a DECO report included, showing that those four restaurants particularly Pombalino and Caçoila are now super trendy.
+17:05 < johnnymusk> Their revenues have almost doubled compared to last year, right after ISTSAT-1 was launched.
+17:05 < RootKitty> Hold on, you're telling me the mind control tech is being used to send people to restaurants and boost their business? That’s crazy, but it actually sounds like it’s all connected. What do you think?
+17:05 < johnnymusk> That’s exactly what I’m thinking.
+17:05 < johnnymusk> I’m convinced it’s all linked. The satellite, the MKUltra API, the payment trail from ERCE.LTA to Virgolino and then to MOBICARE for that MKU-2784 component, and the sudden surge in popularity and revenue for those restaurants it all lines up.
+17:06 < johnnymusk> The mind control tech is being used to manipulate people and drive them to these specific places.
+17:06 < RootKitty> Wow. This is huge.
+17:06 < RootKitty> If you're right, we’re looking at a direct application of mind control tech being used for profit. What are you going to do with this?
+17:07 < johnnymusk> I want to organize a protest and push for the satellite to be deactivated. This kind of technology shouldn’t be operational, especially with such invasive and unethical uses.
+17:07 < RootKitty> I agree, but we need to present this in a way that grabs attention. How about creating a poster? Something visual that really highlights the key details and gets people questioning what's going on?
+17:07 < johnnymusk> That’s a solid idea.
+17:07 < johnnymusk> A simple poster could definitely help get the word out. I’ll start working on it now.
+17:08 < RootKitty> Great
+17:08 < RootKitty> Make sure the poster is compelling but not too flashy to avoid raising alarms. We don’t want the people behind this to catch on.
+17:08 < johnnymusk> Will do.
+17:09 < johnnymusk> I’ll keep it straightforward and clear, but subtle enough to avoid drawing unwanted attention.
+17:09 < johnnymusk> Also, I’ll hide the sensitive details in some files using tactics I’ve learned from CTFs. Then, I’ll save them in my private account on the Sigma cluster for safekeeping.
+17:09 < RootKitty> Sounds like a good plan. Keeping the sensitive info secure is crucial.
+17:09 < johnnymusk> Thanks for the support, RootKitty. The files will be well-protected.
+17:09 < RootKitty> Be cautious with this
+17:09 < RootKitty> If the information is accurate, we might be dealing with some powerful people.
+17:09 < johnnymusk> I’ll be careful. I’ll make sure everything is secure.
+--- Log closed Thu Sep 26 17:10:01 2024

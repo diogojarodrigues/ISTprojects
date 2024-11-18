@@ -1,0 +1,34 @@
+services:
+  frontend:
+    build: ./frontend
+    ports:
+      - "8080:80"
+    depends_on:
+      - bitcoin-service
+      - ethereum-service
+      - monero-service
+      - solana-service
+
+  bitcoin-service:
+    build: ./backend/bitcoinService
+
+  ethereum-service:
+    build: ./backend/ethereumService
+
+  monero-service:
+    build: ./backend/moneroService
+
+  solana-service:
+    build: ./backend/solanaService
+
+  postgres:
+    image: postgres:14-alpine
+    ports:
+      - "5432:5432"
+    volumes:
+      - ~/apps/postgres:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    environment:
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_USER=crypto
+      - POSTGRES_DB=crypto

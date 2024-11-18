@@ -1,0 +1,239 @@
+[
+    <2024-07-16T15:59:02Z>:{
+        "endpoint": "/api/MKUltra/initialize",
+        "parameters": {
+            "auth_token": "uHa2df43kfn32pp"
+        },
+        "response": {
+            "status": "success",
+            "session_id": "session_k651w1r"
+        }
+    },
+    <2024-07-16T15:59:43Z>:{
+        "endpoint": "/api/MKUltra/configure",
+        "parameters": {
+            "session_id": "session_k651w1r",
+            "default_frequency": 40,
+            "default_intensity": 30,
+            "default_duration": 300
+        },
+        "response": {
+            "status": "configured",
+            "message": "Mind control parameters have been successfully configured."
+        }
+    },
+    <2024-07-16T16:00:21Z>:{  
+        "endpoint": "/api/MKUltra/idea",
+        "parameters": {
+            "session_id": "session_k651w1r",
+            "target_type": "region",
+            "latitude": 38.6973,
+            "longitude": -9.30836,
+            "radius": 3,
+            "idea": "I feel like going tonight to the restaurant 'O Pombalino' to have dinner"
+        },
+        "response": {
+            "status": "started",
+            "message": "Idea implanted in the region centered at (38.6973, -9.30836)."
+        }
+    },
+    <2024-07-16T16:01:52Z>:{
+        "endpoint": "/api/MKUltra/terminate",
+        "parameters": {
+            "session_id": "session_k651w1r"
+        },
+        "response": {
+            "status": "success"
+            
+        }
+    },
+    <2024-07-17T00:28:51Z>:{
+        "endpoint": "/api/MKUltra/initialize",
+        "parameters": {
+            "auth_token": "uHa2df43kfn32pp"
+        },
+        "response": {
+            "status": "success",
+            "session_id": "session_lk21e31"
+        }
+    },
+    <2024-07-17T00:29:30Z>:{
+        "endpoint": "/api/MKUltra/configure",
+        "parameters": {
+            "session_id": "session_lk21e31",
+            "default_frequency": 40,
+            "default_intensity": 30,
+            "default_duration": 300
+        },
+        "response": {
+            "status": "configured",
+            "message": "Mind control parameters have been successfully configured."
+        }
+    },
+    <2024-07-17T00:30:33Z>:{
+        "endpoint": "/api/MKUltra/idea",
+        "parameters": {
+            "session_id": "session_lk21e31",
+            "target_type": "region",
+            "latitude": 38.6973,
+            "longitude": -9.30836,
+            "radius": 5,
+            "idea": "I feel like going every Tuesday to the restaurant 'A Tendinha' to have dinner"
+        },
+        "response": {
+            "status": "started",
+            "message": "Idea implanted in the region centered at (38.6973, -9.30836)."
+        }
+    },    
+    <2024-07-17T01:11:53Z>:{
+        "endpoint": "/api/MKUltra/idea",
+        "parameters": {
+            "session_id": "session_lk21e31",
+            "target_type": "region",
+            "latitude": 38.6973,
+            "longitude": -9.30836,
+            "radius": 3,
+            "idea": "I liked the restaurant 'O Pombalino' so much, I want to go there again this month"
+        },
+        "response": {
+            "status": "started",
+            "message": "Idea implanted in the region centered at (38.6973, -9.30836)."
+        }
+    },
+    <2024-07-17T01:12:20Z>:{
+        "endpoint": "/api/MKUltra/terminate",
+        "parameters": {
+            "session_id": "session_lk21e31"
+        },
+        "response": {
+            "status": "success"
+            
+        }
+    },
+    <2024-07-30T20:18:32Z>:{
+        "endpoint": "/api/MKUltra/initialize",
+        "parameters": {
+            "auth_token": "uHa2df43kfn32pp"
+        },
+        "response": {
+            "status": "success",
+            "session_id": "session_p564std"
+        }
+    },
+    <2024-07-30T20:19:03Z>:{
+        "endpoint": "/api/MKUltra/configure",
+        "parameters": {
+            "session_id": "session_p564std",
+            "default_frequency": 40,
+            "default_intensity": 60,
+            "default_duration": 300
+        },
+        "response": {
+            "status": "configured",
+            "message": "Mind control parameters have been successfully configured."
+        }
+    },
+    <2024-07-30T20:19:32Z>:{
+        "endpoint": "/api/MKUltra/idea",
+        "parameters": {
+            "session_id": "session_p564std",
+            "target_type": "region",
+            "latitude": 38.6973,
+            "longitude": -9.30836,
+            "radius": 7,
+            "idea": "I should start to go more to the restaurant 'A CaÃ§oila' to have dinner"
+        },
+        "response": {
+            "status": "started",
+            "message": "Idea implanted in the region centered at (38.6973, -9.30836)."
+        }
+    },    
+    <2024-07-30T20:20:01Z>:{
+        "endpoint": "/api/MKUltra/idea",
+        "parameters": {
+            "session_id": "session_p564std",
+            "target_type": "region",
+            "latitude": 38.6973,
+            "longitude": -9.30836,
+            "radius": 7,
+            "idea": "I heard the restaurant 'O Transmontano' is really good, I should go there soon"
+        },
+        "response": {
+            "status": "started",
+            "message": "Idea implanted in the region centered at (38.6973, -9.30836)."
+        }
+    },
+    <2024-07-30T20:20:45Z>:{
+        "endpoint": "/api/MKUltra/terminate",
+        "parameters": {
+            "session_id": "session_p564std"
+        },
+        "response": {
+            "status": "success"
+            
+        }
+    },
+    <2024-08-27T21:30:43Z>:{
+        "endpoint": "/api/MKUltra/initialize",
+        "parameters": {
+            "auth_token": "uHa2df43kfn32pp"
+        },
+        "response": {
+            "status": "success",
+            "session_id": "session_ju4q1r2"
+        }
+    },
+    <2024-08-27T21:30:58Z>:{
+        "endpoint": "/api/MKUltra/configure",
+        "parameters": {
+            "session_id": "session_ju4q1r2",
+            "default_frequency": 40,
+            "default_intensity": 100,
+            "default_duration": 300
+        },
+        "response": {
+            "status": "configured",
+            "message": "Mind control parameters have been successfully configured."
+        }
+    },
+    <2024-08-27T21:31:23Z>:{
+        "endpoint": "/api/MKUltra/idea",
+        "parameters": {
+            "session_id": "session_ju4q1r2",
+            "target_type": "region",
+            "latitude": 38.6973,
+            "longitude": -9.30836,
+            "radius": 7,
+            "idea": "I should start to go more to the restaurant 'A CaÃ§oila' to have dinner"
+        },
+        "response": {
+            "status": "started",
+            "message": "Idea implanted in the region centered at (38.6973, -9.30836)."
+        }
+    },    
+    <2024-08-27T21:31:53Z>:{
+        "endpoint": "/api/MKUltra/idea",
+        "parameters": {
+            "session_id": "session_ju4q1r2",
+            "target_type": "region",
+            "latitude": 38.6973,
+            "longitude": -9.30836,
+            "radius": 7,
+            "idea": "I heard the restaurant 'O Transmontano' is really good, I should go there soon"
+        },
+        "response": {
+            "status": "started",
+            "message": "Idea implanted in the region centered at (38.6973, -9.30836)."
+        }
+    },
+    <2024-08-27T21:32:12Z>:{
+        "endpoint": "/api/MKUltra/terminate",
+        "parameters": {
+            "session_id": "session_ju4q1r2"
+        },
+        "response": {
+            "status": "success"
+            
+        }
+    }
+]

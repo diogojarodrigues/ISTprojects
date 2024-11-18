@@ -1,0 +1,5 @@
+CREATE TABLE transactions (
+    id SERIAL PRIMARY KEY,
+    log TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

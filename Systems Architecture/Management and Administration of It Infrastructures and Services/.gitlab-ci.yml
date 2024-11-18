@@ -1,0 +1,168 @@
+stages:
+  - build
+  - deploy
+
+build-bitcoin-service:
+  stage: build
+  image:
+    name: gcr.io/kaniko-project/executor:v1.14.0-debug
+    entrypoint: [""]
+  script:
+    - >
+      echo '{ "auths": { "https://index.docker.io/v1/": { "auth": "'"${DOCKER_HUB_TOKEN}"'" } } }' > /kaniko/.docker/config.json
+    - /kaniko/executor
+      --context "${CI_PROJECT_DIR}/src/backend/bitcoinService"
+      --dockerfile "${CI_PROJECT_DIR}/src/backend/bitcoinService/Dockerfile"
+      --destination "docker.io/pereira0x/bitcoin-service:latest"
+  rules:
+    - if: $CI_COMMIT_BRANCH == "master"
+      changes:
+        - src/backend/bitcoinService/**/*
+
+build-ethereum-service:
+  stage: build
+  image:
+    name: gcr.io/kaniko-project/executor:v1.14.0-debug
+    entrypoint: [""]
+  script:
+    - >
+      echo '{ "auths": { "https://index.docker.io/v1/": { "auth": "'"${DOCKER_HUB_TOKEN}"'" } } }' > /kaniko/.docker/config.json
+    - /kaniko/executor
+      --context "${CI_PROJECT_DIR}/src/backend/ethereumService"
+      --dockerfile "${CI_PROJECT_DIR}/src/backend/ethereumService/Dockerfile"
+      --destination "docker.io/pereira0x/ethereum-service:latest"
+  rules:
+    - if: $CI_COMMIT_BRANCH == "master"
+      changes:
+        - src/backend/ethereumService/**/*
+
+build-solana-service:
+  stage: build
+  image:
+    name: gcr.io/kaniko-project/executor:v1.14.0-debug
+    entrypoint: [""]
+  script:
+    - >
+      echo '{ "auths": { "https://index.docker.io/v1/": { "auth": "'"${DOCKER_HUB_TOKEN}"'" } } }' > /kaniko/.docker/config.json
+    - /kaniko/executor
+      --context "${CI_PROJECT_DIR}/src/backend/solanaService"
+      --dockerfile "${CI_PROJECT_DIR}/src/backend/solanaService/Dockerfile"
+      --destination "docker.io/pereira0x/solana-service:latest"
+  rules:
+    - if: $CI_COMMIT_BRANCH == "master"
+      changes:
+        - src/backend/solanaService/**/*
+
+build-monero-service:
+  stage: build
+  image:
+    name: gcr.io/kaniko-project/executor:v1.14.0-debug
+    entrypoint: [""]
+  script:
+    - >
+      echo '{ "auths": { "https://index.docker.io/v1/": { "auth": "'"${DOCKER_HUB_TOKEN}"'" } } }' > /kaniko/.docker/config.json
+    - /kaniko/executor
+      --context "${CI_PROJECT_DIR}/src/backend/moneroService"
+      --dockerfile "${CI_PROJECT_DIR}/src/backend/moneroService/Dockerfile"
+      --destination "docker.io/pereira0x/monero-service:latest"
+  rules:
+    - if: $CI_COMMIT_BRANCH == "master"
+      changes:
+        - src/backend/moneroService/**/*
+
+build-frontend-service:
+  stage: build
+  image:
+    name: gcr.io/kaniko-project/executor:v1.14.0-debug
+    entrypoint: [""]
+  script:
+    - >
+      echo '{ "auths": { "https://index.docker.io/v1/": { "auth": "'"${DOCKER_HUB_TOKEN}"'" } } }' > /kaniko/.docker/config.json
+    - /kaniko/executor
+      --context "${CI_PROJECT_DIR}/src/frontend"
+      --dockerfile "${CI_PROJECT_DIR}/src/frontend/Dockerfile"
+      --destination "docker.io/pereira0x/frontend-service:latest"
+  rules:
+    - if: $CI_COMMIT_BRANCH == "master"
+      changes:
+        - src/frontend/**/*
+
+deploy-frontend-service:
+  stage: deploy
+  image: google/cloud-sdk
+  script:
+    - gcloud auth activate-service-account --key-file=$gcp_key
+    - gcloud config set project agisit2425-project-g19
+    - gcloud config set container/cluster cluster-1
+    - gcloud config set compute/zone europe-central2
+    - gcloud container clusters get-credentials agisit2425-project-g19-gke --region europe-central2 --project agisit2425-project-g19
+    - kubectl delete pod --selector="app=frontend" --namespace=application
+  when: manual
+  rules:
+    - if: $CI_COMMIT_BRANCH == "master"
+      changes:
+        - src/frontend/**/*
+
+deploy-bitcoin-service:
+  stage: deploy
+  image: google/cloud-sdk
+  script:
+    - gcloud auth activate-service-account --key-file=$gcp_key
+    - gcloud config set project agisit2425-project-g19
+    - gcloud config set container/cluster cluster-1
+    - gcloud config set compute/zone europe-central2
+    - gcloud container clusters get-credentials agisit2425-project-g19-gke --region europe-central2 --project agisit2425-project-g19
+    - kubectl delete pod --selector="app=bitcoin" --namespace=application
+  when: manual
+  rules:
+    - if: $CI_COMMIT_BRANCH == "master"
+      changes:
+        - src/backend/bitcoinService/**/*
+
+deploy-ethereum-service:
+  stage: deploy
+  image: google/cloud-sdk
+  script:
+    - gcloud auth activate-service-account --key-file=$gcp_key
+    - gcloud config set project agisit2425-project-g19
+    - gcloud config set container/cluster cluster-1
+    - gcloud config set compute/zone europe-central2
+    - gcloud container clusters get-credentials agisit2425-project-g19-gke --region europe-central2 --project agisit2425-project-g19
+    - kubectl delete pod --selector="app=ethereum" --namespace=application
+  when: manual
+  rules:
+    - if: $CI_COMMIT_BRANCH == "master"
+      changes:
+        - src/backend/ethereumService/**/*
+
+deploy-solana-service:
+  stage: deploy
+  image: google/cloud-sdk
+  script:
+    - gcloud auth activate-service-account --key-file=$gcp_key
+    - gcloud config set project agisit2425-project-g19
+    - gcloud config set container/cluster cluster-1
+    - gcloud config set compute/zone europe-central2
+    - gcloud container clusters get-credentials agisit2425-project-g19-gke --region europe-central2 --project agisit2425-project-g19
+    - kubectl delete pod --selector="app=solana" --namespace=application
+  when: manual
+  rules:
+    - if: $CI_COMMIT_BRANCH == "master"
+      changes:
+        - src/backend/solanaService/**/*
+
+deploy-monero-service:
+  stage: deploy
+  image: google/cloud-sdk
+  script:
+    - gcloud auth activate-service-account --key-file=$gcp_key
+    - gcloud config set project agisit2425-project-g19
+    - gcloud config set container/cluster cluster-1
+    - gcloud config set compute/zone europe-central2
+    - gcloud container clusters get-credentials agisit2425-project-g19-gke --region europe-central2 --project agisit2425-project-g19
+    - kubectl delete pod --selector="app=monero" --namespace=application
+  when: manual
+  rules:
+    - if: $CI_COMMIT_BRANCH == "master"
+      changes:
+        - src/backend/moneroService/**/*

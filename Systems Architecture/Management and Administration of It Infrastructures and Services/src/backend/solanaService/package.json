@@ -1,0 +1,15 @@
+{
+  "name": "solanaservice",
+  "version": "1.0.0",
+  "description": "Solana purchase service",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "g19",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.0",
+    "pg": "^8.13.0"
+  }
+}

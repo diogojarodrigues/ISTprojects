@@ -1,0 +1,140 @@
+/* Background and layout */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #1e6572, #2a5298); /* A nice background gradient */
+    font-family: 'Mono', monospace, arial;
+}
+
+header {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+header h1 {
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.crypto-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.crypto-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.crypto-button {
+    width: 150px;
+    height: 150px;
+    border: none;
+    border-radius: 15px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin-bottom: 10px;
+
+}
+
+.crypto-button:hover {
+    transform: scale(1.1);
+}
+
+.crypto-input {
+    width: 150px;
+    padding: 8px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.buy-button {
+    width: 150px;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
+    font-family: 'Mono', monospace;
+
+}
+
+.buy-button:hover {
+    background-color: #218838;
+}
+
+/* Specific logos for each cryptocurrency */
+.bitcoin {
+    background-image: url('https://cryptologos.cc/logos/bitcoin-btc-logo.png');
+    background-color: #f7931a;
+}
+
+.ethereum {
+    background-image: url('https://cryptologos.cc/logos/ethereum-eth-logo.png');
+    background-color: #3c3c3d;
+}
+
+.solana {
+    background-image: url('https://cryptologos.cc/logos/solana-sol-logo.png');
+    background-color: #00ffa3;
+}
+
+.monero {
+    background-image: url('https://cryptologos.cc/logos/monero-xmr-logo.png');
+    background-color: #ff6600;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+}
+
+footer p {
+    margin: 0;
+}
